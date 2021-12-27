@@ -16,3 +16,5 @@
 
 # 5. view the website, browser
     http://127.0.0.1:8000/
+
+# NOT gonna work, cause the database conf. 
