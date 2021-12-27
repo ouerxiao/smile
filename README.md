@@ -15,4 +15,4 @@
 	python manage.py runserver 
 
 # 5. view the website, browser
-      http://127.0.0.1:8000/
+    http://127.0.0.1:8000/
