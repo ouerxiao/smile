@@ -16,10 +16,7 @@
 
 # 5. view the website, browser
         http://127.0.0.1:8000/
-<<<<<<<< HEAD
+
 # Not gonna work, cause the database conf.
 
-=======
 
-# NOT gonna work, cause the database conf. 
->>>>>>> 65d1af9b8478baea2538c018c69762a642ea09c8
