@@ -155,3 +155,5 @@ EMAIL_HOST_USER = os.environ.get('EMAIL_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'Oyehaha Team <admin@oyehaha.com>'
+
+DEFAULT_AUTO_FIELD='django.db.models.AutoField' 
