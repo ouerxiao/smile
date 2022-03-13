@@ -155,6 +155,12 @@ EMAIL_PORT = env('EMAIL_PORT')
 EMAIL_HOST_USER = env('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS = True
+<<<<<<< HEAD
 DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL')
 
 DEFAULT_AUTO_FIELD='django.db.models.AutoField' 
+=======
+DEFAULT_FROM_EMAIL = 'Oyehaha Team <admin@oyehaha.com>'
+
+DEFAULT_AUTO_FIELD='django.db.models.AutoField' 
+>>>>>>> 8e772e341182a1d3ab0e38028c35163761414d9f
