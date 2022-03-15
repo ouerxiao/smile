@@ -11,7 +11,9 @@ import json
 
 
 def index(request):
-    setting = Setting.objects.get(pk=1)
+    try: setting = Setting.objects.get(pk=1)
+    except Setting.DoesNotExist:
+        setting = None
     category = Category.objects.all()
     post_slider = Post.objects.filter(status='Published').order_by('-id')[:3]
 
@@ -38,7 +40,10 @@ def index(request):
 
 
 def about(request):
-    setting = Setting.objects.get(pk=1)
+
+    try: setting = Setting.objects.get(pk=1)
+    except Setting.DoesNotExist:
+        setting = None
     category = Category.objects.all()
     context = {'setting': setting, 'category': category}
     return render(request, 'home/about.html', context)
@@ -59,7 +64,9 @@ def contact(request):
                 request, '信息已发送，感谢您的联系！')
             return HttpResponseRedirect('/contact')
 
-    setting = Setting.objects.get(pk=1)
+    try: setting = Setting.objects.get(pk=1)
+    except Setting.DoesNotExist:
+        setting = None
     category = Category.objects.all()
     form = ContactForm()
     context = {'setting': setting, 'category': category, 'form': form}
