@@ -14,14 +14,15 @@
 
     
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="/">主页</a></li>  
+        <li class="breadcrumb-item"><a href="/">home</a></li>  
             <li class="breadcrumb-item active"><a href="{{query.get_absolute_url}}">{{ query }}</a></li>
     </ol>
    
     {% if posts %}
-        {% include 'blog/post_list.html' %}
+	{% include "blog/post_list.html" %} 
+ 
     {% else %}
-        <a href="/"><p class="text-center">未有相关文章！先去首页溜溜~</p></a>
+        <a href="/"><p class="text-center">COMING SOON!!! check out others~~</p></a>
     {% endif %}
 
 </section>
@@ -29,6 +30,6 @@
 
 {% endblock %}
 
-{% block footer %} {% include 'footer.html' %} {% endblock %}
+{% block footer %} {% include "footer.html" %} {% endblock %}
 
 

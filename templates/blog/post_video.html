@@ -11,8 +11,8 @@
 
 {% block body %}
 <ol class="breadcrumb">
-  <li class="breadcrumb-item"><a href="/">主页</a></li>
-  <li class="breadcrumb-item "><a href="{% url 'video' %}">影视集：</a></li>
+  <li class="breadcrumb-item"><a href="/">home</a></li>
+  <li class="breadcrumb-item "><a href="{% url 'video' %}">videos：</a></li>
 </ol>
 
 <div class="row">
@@ -34,12 +34,12 @@
             </div>
   
             <div class="modal-footer justify-content-center">
-              <span class="mr-4">分享链接：</span>
+              <span class="mr-4">share：</span>
               <a type="button" class="btn-floating btn-sm btn-fb"><i class="fab fa-facebook-f"></i></a>
               <a type="button" class="btn-floating btn-sm btn-tw"><i class="fab fa-twitter"></i></a>
               <a type="button" class="btn-floating btn-sm btn-gplus"><i class="fab fa-google-plus-g"></i></a>
               <a type="button" class="btn-floating btn-sm btn-ins"><i class="fab fa-linkedin-in"></i></a>
-              <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4" data-dismiss="modal">关闭</button>
+              <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4" data-dismiss="modal">close</button>
             </div>
   
           </div>
@@ -69,12 +69,12 @@
 {% if posts.has_other_pages %}
 <nav aria-label="Page navigation example">
     <ul class="pagination pagination-circle pg-blue">
-        <li class="page-item "><a class="page-link" href="?page=1">第一页</a></li>
+        <li class="page-item "><a class="page-link" href="?page=1">First page</a></li>
         <li class="page-item ">
             {% if posts.has_previous %}
             <a class="page-link" aria-label="Previous" href="?page={{ posts.previous_page_number }}">
                 <span aria-hidden="true">&laquo;</span>
-                <span class="sr-only">上一页</span>
+                <span class="sr-only">prev</span>
             </a>
         </li>
         {% endif %}
@@ -91,10 +91,10 @@
         <li class="page-item">
             <a class="page-link" aria-label="Next" href="?page={{ posts.next_page_number }}">
                 <span aria-hidden="true">&raquo;</span>
-                <span class="sr-only">下一页</span>
+                <span class="sr-only">next</span>
             </a>
         </li>
-        <li class="page-item"><a class="page-link" href="?page= {{ posts.paginator.num_pages }}">最后一页</a></li>
+        <li class="page-item"><a class="page-link" href="?page= {{ posts.paginator.num_pages }}">Last Page</a></li>
     </ul>
     {% endif %}
 </nav>

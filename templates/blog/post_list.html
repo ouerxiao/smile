@@ -23,7 +23,7 @@
             <div class="collapse-content">
                 <a href="{{ post.get_absolute_url}}"><p class="card-text">{{ post.body|safe|truncatewords:"20"|linebreaks }}</p></a>
                 <a class="btn btn-flat red-text p-1 my-1 mr-0 mml-1" href="{{ post.get_absolute_url}}"> 
-                    更多...<i class="fas fa-angle-double-right"></i>
+                    more...<i class="fas fa-angle-double-right"></i>
                 </a>
 
                 <button class="btn-sm btn-link float-right p-1 my-1"style="border:none" type="button" id="dropdownMenu1" data-toggle="dropdown"
@@ -51,12 +51,12 @@
 {% if posts.has_other_pages %}
 <nav aria-label="Page navigation example">
     <ul class="pagination pagination-circle pg-blue">
-        <li class="page-item "><a class="page-link" href="?page=1">第一页</a></li>
+        <li class="page-item "><a class="page-link" href="?page=1">First Page</a></li>
         <li class="page-item ">
             {% if posts.has_previous %}
             <a class="page-link" aria-label="Previous" href="?page={{ posts.previous_page_number }}">
                 <span aria-hidden="true">&laquo;</span>
-                <span class="sr-only">上一页</span>
+                <span class="sr-only">prev</span>
             </a>
         </li>
         {% endif %}
@@ -73,10 +73,10 @@
         <li class="page-item">
             <a class="page-link" aria-label="Next" href="?page={{ posts.next_page_number }}">
                 <span aria-hidden="true">&raquo;</span>
-                <span class="sr-only">下一页</span>
+                <span class="sr-only">next</span>
             </a>
         </li>
-        <li class="page-item"><a class="page-link" href="?page= {{ posts.paginator.num_pages }}">最后一页</a></li>
+        <li class="page-item"><a class="page-link" href="?page= {{ posts.paginator.num_pages }}">Last page</a></li>
     </ul>
     {% endif %}
 </nav>

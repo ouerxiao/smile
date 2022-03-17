@@ -9,17 +9,17 @@
 {% block body %}
 
 <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="/">主页</a></li>
+    <li class="breadcrumb-item"><a href="/">home</a></li>
     <li class="breadcrumb-item active">
         <a href="{% url 'about' %}">
-        关于：</a></li>
+        About：</a></li>
 </ol>
     
 
 <div class="col-md-8">
     <div class="about-infor">
         <div class="section-title">
-            <h4 class="title">关于我们：</h4>
+            <h4 class="title">about us：</h4>
         </div>
         <div class="float-right">
             {{ setting.aboutus|safe }}

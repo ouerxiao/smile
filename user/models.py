@@ -7,12 +7,12 @@ from django.utils.html import mark_safe
 # Create your models here.
 
 class UserProfile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, verbose_name='用户名')
-    phone = models.CharField(blank=True, max_length=20, verbose_name='电话')
-    address = models.CharField(blank=True, max_length=150, verbose_name='地址')
-    city = models.CharField(blank=True, max_length=20, verbose_name='城市')
-    country = models.CharField(blank=True, max_length=20, verbose_name='国家')
-    avatar = models.ImageField(blank=True, upload_to='avatar/', verbose_name='头像', )
+    user = models.OneToOneField(User, on_delete=models.CASCADE, verbose_name='username')
+    phone = models.CharField(blank=True, max_length=20, verbose_name='phone')
+    address = models.CharField(blank=True, max_length=150, verbose_name='address')
+    city = models.CharField(blank=True, max_length=20, verbose_name='city')
+    country = models.CharField(blank=True, max_length=20, verbose_name='country')
+    avatar = models.ImageField(blank=True, upload_to='avatar/', verbose_name='avatar', )
 
     def __str__(self):
         return self.user.username

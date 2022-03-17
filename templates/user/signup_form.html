@@ -10,10 +10,10 @@
 
 {% block body %}
 <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="/">主页</a></li>
+    <li class="breadcrumb-item"><a href="/">home</a></li>
     <li class="breadcrumb-item active">
         <a href="{% url 'signup' %}">
-            用户创建：</a></li>
+            SIGN UP：</a></li>
 </ol>
     
 
@@ -48,13 +48,13 @@
                         {% endfor %}
                     </p>
                 {% endfor %}
-                <button type="submit">注册</button>
+                <button type="submit">sign up</button>
                 <br>
                 <br>
-                <a href="{% url 'login' %}">>>>>>>已有账号，直接登入!</a>
+                <a href="{% url 'login' %}">>>>>>> already have account, sign IN!</a>
                 <br>
                 <br>
-                <a href="{% url 'password_reset' %}">>>>忘记密码!</a>
+                <a href="{% url 'password_reset' %}">>>> forgot password!</a>
                 <br>
                 <br>
             </form>

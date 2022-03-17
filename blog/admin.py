@@ -36,11 +36,11 @@ class CategoryAdmin2(DraggableMPTTAdmin):
 
     def related_posts_count(self, instance):
         return instance.posts_count
-    related_posts_count.short_description = '相关文章（个别分类）'
+    related_posts_count.short_description = 'Related article（category）'
 
     def related_posts_cumulative_count(self, instance):
         return instance.posts_cumulative_count
-    related_posts_cumulative_count.short_description = '相关文章（总分类）'
+    related_posts_cumulative_count.short_description = 'related article（total categories）'
 
 class PostImageInline(admin.TabularInline):
     model = PostImage

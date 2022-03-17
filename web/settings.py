@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 ALLOWED_HOSTS=['*']
 DEBUG=True
 
-SECRET_KEY=env('SECRET_KEY')
+SECRET_KEY='@23j@y(#lj=^t4kkd$%#riir6^4r8w_7xtx+w1h82z1nqlm&kr'
 
 # Application definition
 
@@ -86,9 +86,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': env('DB_NAME'),
         'HOST':env('DB_HOST'),
-        'PORT': '3306',
+        'PORT': env('DB_PORT'),
         'USER': env('DB_USER'),
-        'PASSWORD': env('DB_PASSWORD')
+        'PASSWORD': env('DB_PASSWORD'),
 #        'OPTIONS':{
 #            'read_default_file': '/usr/local/etc/my.cnf',
 #            },
@@ -131,10 +131,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'web/static')]
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 MEDIA_URL = '/media/'
 
 CKEDITOR_UPLOAD_PATH = "uploads/"

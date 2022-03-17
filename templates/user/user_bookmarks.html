@@ -10,10 +10,10 @@
 {% block body %}
 
 <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="/">主页</a></li>
+    <li class="breadcrumb-item"><a href="/">home</a></li>
     <li class="breadcrumb-item active">
         <a href="{% url 'user_bookmarks' %}">
-            我的收藏：</a></li>
+            my bookmarks：</a></li>
 </ol>
 
 
@@ -26,7 +26,7 @@
             <div class="col-md-9">
                 <div class="profile-details">
                     <div class="section-title">
-                        <h3 class="title">我的收藏：</h3>
+                        <h3 class="title">my bookmarks：</h3>
                     </div>
                 </div>
 {% if posts %}  
@@ -36,7 +36,7 @@
     </div>
 </div>
 {% else %}
-<a href="/"><p class="text-center">还未收藏过！去博客首页溜溜~</p></a>
+<a href="/"><p class="text-center">There is NONE! check out blogs~~~</p></a>
 {% endif %}
     
 

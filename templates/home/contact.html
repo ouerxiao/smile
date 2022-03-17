@@ -10,10 +10,10 @@
 {% block body %}
 
 <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="/">主页</a></li>
+    <li class="breadcrumb-item"><a href="/">home</a></li>
     <li class="breadcrumb-item active">
         <a href="{% url 'contact' %}">
-            联系：</a></li>
+            contact：</a></li>
 </ol>
 
 
@@ -46,7 +46,7 @@
         <div class="col-md-8">
             <div class="contact-infor">
                 <div class="section-title">
-                    <h4 class="title">联系方式：</h4>
+                    <h4 class="title">contact：</h4>
                 </div>
                 <div>
                     {{ setting.contact|safe }}

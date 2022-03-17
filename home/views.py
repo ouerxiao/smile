@@ -15,7 +15,8 @@ def index(request):
     except Setting.DoesNotExist:
         setting = None
     category = Category.objects.all()
-    post_slider = Post.objects.filter(status='Published').order_by('-id')[:3]
+    # category = Category.objects.get_queryset().order_by('id')
+    post_slider = Post.objects.filter(status='Published').order_by('id')[:3]
 
     post_list = Post.objects.filter(status='Published')
     page = request.GET.get('page', 1)
@@ -61,7 +62,7 @@ def contact(request):
             data.ip = request.META.get('REMOTE_ADDR')
             data.save()
             messages.success(
-                request, '信息已发送，感谢您的联系！')
+                request, 'Messages sent，thanks for contacting！')
             return HttpResponseRedirect('/contact')
 
     try: setting = Setting.objects.get(pk=1)
@@ -75,6 +76,7 @@ def contact(request):
 
 def category_post(request, id, slug):
     category = Category.objects.all()
+    # category = Category.objects.get_queryset().order_by('id')
     query = Category.objects.get(pk=id)
     post_list = Post.objects.filter(category_id=id, status='Published')
     page = request.GET.get('page', 1)

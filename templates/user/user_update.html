@@ -10,10 +10,10 @@
 
 {% block body %}
 <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="/">主页</a></li>
+    <li class="breadcrumb-item"><a href="/">home</a></li>
     <li class="breadcrumb-item active">
         <a href="{% url 'user_update' %}">
-            用户更新信息：</a></li>
+            Update profile：</a></li>
 </ol>
     
     
@@ -27,7 +27,7 @@
                 <div class="col-md-9">
                     <div class="profile-details">
                         <div class="section-title">
-                            <h3 class="title">信息更新：</h3>
+                            <h3 class="title">update：</h3>
                         </div>
                     </div>
     
@@ -48,7 +48,7 @@
                             {{ profile_form.as_p }}
                         </fieldset>
                         <div class="form-group">
-                            <button class="btn-primary" type='submit'>更新</button>
+                            <button class="btn-primary" type='submit'>submit</button>
                         </div>
                    </form>
                 </div>    
