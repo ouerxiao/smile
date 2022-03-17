@@ -12,7 +12,7 @@
 	pip install -r /path/to/requirements.txt
 
 # 4. start django 
-	python manage.py runserver 
+    ./manage.py runserver 
 
 # 5. view the website, browser
      http://127.0.0.1:8000/
