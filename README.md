@@ -9,13 +9,13 @@
 
 
 # 3. install required packages
-	pip install r /path/to/requirements.txt
+	pip install -r /path/to/requirements.txt
 
 # 4. start django 
 	python manage.py runserver 
 
 # 5. view the website, browser
-        http://127.0.0.1:8000/
+     http://127.0.0.1:8000/
 
 # Not gonna work, cause the database conf.
 
