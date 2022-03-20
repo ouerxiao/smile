@@ -39,7 +39,6 @@ class Setting(models.Model):
     class Meta:
         db_table = 'home_setting'
 
-
 class ContactMessage(models.Model):
     STATUS = (
         ('New', 'New'),
@@ -47,10 +46,10 @@ class ContactMessage(models.Model):
         ('Closed', 'Closed'),
     )
 
-    name = models.CharField(blank=True, max_length=20, verbose_name="用户名")
-    email = models.CharField(blank=True, max_length=50, verbose_name="邮箱")
-    subject = models.CharField(blank=True, max_length=50,verbose_name="主题" )
-    message = models.CharField(blank=True, max_length=225, verbose_name="内容")
+    name = models.CharField(blank=True, max_length=20, verbose_name="name")
+    email = models.CharField(blank=True, max_length=50, verbose_name="email")
+    subject = models.CharField(blank=True, max_length=50,verbose_name="subject" )
+    message = models.CharField(blank=True, max_length=225, verbose_name="message")
     status = models.CharField(max_length=10, choices=STATUS, default='New')
     ip = models.CharField(blank=True, max_length=20)
     note = models.CharField(blank=True, max_length=100)

@@ -11,8 +11,8 @@
 
 {% block body %}
 <ol class="breadcrumb">
-  <li class="breadcrumb-item"><a href="/">home</a></li>
-  <li class="breadcrumb-item "><a href="{% url 'video' %}">videos：</a></li>
+  <li class="breadcrumb-item"><a href="/">Home</a></li>
+  <li class="breadcrumb-item "><a href="{% url 'video' %}"> Video：</a></li>
 </ol>
 
 <div class="row">
@@ -34,7 +34,7 @@
             </div>
   
             <div class="modal-footer justify-content-center">
-              <span class="mr-4">share：</span>
+              <span class="mr-4"> share：</span>
               <a type="button" class="btn-floating btn-sm btn-fb"><i class="fab fa-facebook-f"></i></a>
               <a type="button" class="btn-floating btn-sm btn-tw"><i class="fab fa-twitter"></i></a>
               <a type="button" class="btn-floating btn-sm btn-gplus"><i class="fab fa-google-plus-g"></i></a>
@@ -94,7 +94,7 @@
                 <span class="sr-only">next</span>
             </a>
         </li>
-        <li class="page-item"><a class="page-link" href="?page= {{ posts.paginator.num_pages }}">Last Page</a></li>
+        <li class="page-item"><a class="page-link" href="?page= {{ posts.paginator.num_pages }}">Last page</a></li>
     </ul>
     {% endif %}
 </nav>

@@ -8,10 +8,10 @@ class ContactForm(forms.ModelForm):
         model = ContactMessage
         fields = ['name', 'email', 'subject', 'message']
         widgets = {
-            'name': forms.TextInput(attrs={'class':'input','placeholder':'名字' }),
-            'subject': forms.TextInput(attrs={'class':'input','placeholder':'主题'}),
-            'email': forms.TextInput(attrs={'class':'input', 'placeholder': '邮箱'}),
-            'message': forms.Textarea(attrs={'class':'input', 'placeholder':'内容', 'rows':'5'}),
+            'name': forms.TextInput(attrs={'class':'input','placeholder':'John' }),
+            'subject': forms.TextInput(attrs={'class':'input','placeholder':'Subject'}),
+            'email': forms.TextInput(attrs={'class':'input', 'placeholder': 'example@domain.com'}),
+            'message': forms.Textarea(attrs={'class':'input', 'placeholder':'Your quetions or comments', 'rows':'5'}),
         }
 
     def __init__(self, *args, **kwargs):
@@ -22,7 +22,7 @@ class ContactForm(forms.ModelForm):
             'email',
             'message',
         )
-        self.helper.add_input(Submit('save', '发送', css_class = 'btn-primary'))
+        self.helper.add_input(Submit('save', 'submit', css_class = 'btn-primary'))
 
         super(ContactForm,self).__init__(*args, **kwargs)
 

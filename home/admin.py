@@ -6,7 +6,6 @@ from home.models import Setting, ContactMessage, FAQ
 class SettingAdmin(admin.ModelAdmin):
     list_display = ['title', 'company', 'update_at', 'status', ]
 
-
 class ContactMessageAdmin(admin.ModelAdmin):
     list_display = ['name', 'subject', 'update_at', 'status']
     readonly_fields = ('name', 'subject', 'email', 'message', 'ip')
@@ -15,7 +14,6 @@ class ContactMessageAdmin(admin.ModelAdmin):
 class FAQAdmin(admin.ModelAdmin):
     list_display = ['question', 'answer', 'postnumber', 'status']
     list_filter = ['status']
-
 
 
 admin.site.register(Setting, SettingAdmin)

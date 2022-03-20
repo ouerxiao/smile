@@ -8,15 +8,10 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 import json
 
 # Create your views here.
-
-
 def index(request):
-    try: setting = Setting.objects.get(pk=1)
-    except Setting.DoesNotExist:
-        setting = None
+    setting = Setting.objects.get(pk=1)
     category = Category.objects.all()
-    # category = Category.objects.get_queryset().order_by('id')
-    post_slider = Post.objects.filter(status='Published').order_by('id')[:3]
+    post_slider = Post.objects.filter(status='Published').order_by('-id')[:3]
 
     post_list = Post.objects.filter(status='Published')
     page = request.GET.get('page', 1)
@@ -29,7 +24,6 @@ def index(request):
         posts = paginator.page(1)
     except EmptyPage:
         posts = paginator.page(paginator.num_pages)
-    
 
     context = {
         'setting': setting,
@@ -39,16 +33,11 @@ def index(request):
         }
     return render(request, 'home/index.html', context)
 
-
 def about(request):
-
-    try: setting = Setting.objects.get(pk=1)
-    except Setting.DoesNotExist:
-        setting = None
+    setting = Setting.objects.get(pk=1)
     category = Category.objects.all()
     context = {'setting': setting, 'category': category}
     return render(request, 'home/about.html', context)
-
 
 def contact(request):
     if request.method == 'POST':
@@ -62,21 +51,17 @@ def contact(request):
             data.ip = request.META.get('REMOTE_ADDR')
             data.save()
             messages.success(
-                request, 'Messages sent，thanks for contacting！')
+                request, 'Meesage sent, thanks for contacting!')
             return HttpResponseRedirect('/contact')
 
-    try: setting = Setting.objects.get(pk=1)
-    except Setting.DoesNotExist:
-        setting = None
+    setting = Setting.objects.get(pk=1)
     category = Category.objects.all()
     form = ContactForm()
     context = {'setting': setting, 'category': category, 'form': form}
     return render(request, 'home/contact.html', context)
 
-
 def category_post(request, id, slug):
     category = Category.objects.all()
-    # category = Category.objects.get_queryset().order_by('id')
     query = Category.objects.get(pk=id)
     post_list = Post.objects.filter(category_id=id, status='Published')
     page = request.GET.get('page', 1)
@@ -93,12 +78,9 @@ def category_post(request, id, slug):
     context = {
         "posts": posts, 
         'category': category,
-        'query': query
-       
+        'query': query       
     }
     return render(request, 'home/category_posts.html', context)
-
-
 
 def search(request):
     if request.method == 'POST':
@@ -119,7 +101,6 @@ def search(request):
                 'query': query}
             return render(request, 'home/search_posts.html', context)
     return HttpResponseRedirect('/')
-
 
 def search_auto(request):
     if request.is_ajax():

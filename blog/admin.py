@@ -3,7 +3,6 @@ from blog.models import Category, Post, PostImage, Comment, Youtube
 from mptt.admin import DraggableMPTTAdmin
 
 # Register your models here.
-
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ['name', 'parent', 'status']
     list_filter = ['status']
@@ -36,11 +35,11 @@ class CategoryAdmin2(DraggableMPTTAdmin):
 
     def related_posts_count(self, instance):
         return instance.posts_count
-    related_posts_count.short_description = 'Related article（category）'
+    related_posts_count.short_description = 'related article(category)'
 
     def related_posts_cumulative_count(self, instance):
         return instance.posts_cumulative_count
-    related_posts_cumulative_count.short_description = 'related article（total categories）'
+    related_posts_cumulative_count.short_description = 'related article(total categories)'
 
 class PostImageInline(admin.TabularInline):
     model = PostImage

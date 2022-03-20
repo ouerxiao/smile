@@ -4,17 +4,16 @@ from django.contrib.auth.models import User
 from user.models import UserProfile
 
 class SignUpForm(UserCreationForm):
-    username = forms.CharField(max_length=30, label='用户名')
-    email = forms.EmailField(max_length=200, label='邮箱')
-    first_name = forms.CharField(max_length=100, label='名')
-    last_name = forms.CharField(max_length=100, label='姓')
+    username = forms.CharField(max_length=30, label='username')
+    email = forms.EmailField(max_length=200, label='email')
+    first_name = forms.CharField(max_length=100, label='first name')
+    last_name = forms.CharField(max_length=100, label='last name')
     
     class Meta:
         model = User
         fields = ('username', 'email', 'first_name', 'last_name', 'password1', 'password2')
 
 class UserUpdateForm(UserChangeForm):
-
     class Meta:
         model = User
         fields = ('username', 'email', 'first_name', 'last_name')
@@ -38,10 +37,10 @@ class ProfileUpdateForm(forms.ModelForm):
         model = UserProfile
         fields = ('phone', 'address', 'city', 'country', 'avatar')
         widgets = {
-            'phone': forms.TextInput(attrs={'class':'input', 'placeholder':'电话- 可不填'}),
-            'address': forms.TextInput(attrs={'class':'input', 'placeholder':'地址- 可不填'}),
+            'phone': forms.TextInput(attrs={'class':'input', 'placeholder':' optional'}),
+            'address': forms.TextInput(attrs={'class':'input', 'placeholder':' optional'}),
             'city': forms.Select(attrs={'class':'input', 'placeholder':'city'}, choices=CITY),
-            'country': forms.TextInput(attrs={'class':'input', 'placeholder':'国家- 现居哪国？',}),
-            'avatar': forms.FileInput(attrs={'class':'input', 'placeholder':'头像'}),
+            'country': forms.TextInput(attrs={'class':'input', 'placeholder':' NOW？',}),
+            'avatar': forms.FileInput(attrs={'class':'input', 'placeholder':'avatar'}),
         }
 

@@ -3,8 +3,6 @@ import blog.views as views
 from django.contrib.auth.decorators import login_required
 
 
-
-
 urlpatterns = [
     path('blog/<int:id>/<slug:slug>/', views.post_detail, name='post-detail'),
     path('blog/addcomment/<int:id>', views.addcomment, name='comment'),
@@ -14,6 +12,5 @@ urlpatterns = [
     path('like/<int:pk>/', views.like_post, name='like-post'),
     path('likeimage/<int:pk>/', views.like_image, name='like-image'),
     path('bookmark/<int:id>/', views.bookmark_post, name='bookmark-post'),
-    
     
 ]

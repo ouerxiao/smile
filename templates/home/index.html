@@ -9,20 +9,7 @@
 {% block keywords %} {{ setting.keywords }} {% endblock %}
 
 {% block navbar %} {% include "navbar.html" %} {% endblock %}
-{% block slider %} 
-{% if posts %}
-	{% include "slider.html" %}
-{% else %}
-	<h1> CANT find posts...</h1>
-{% endif %}	
-{% endblock %}
+{% block slider %} {% include "slider.html" %} {% endblock %}
 
-{% block body %}
-{% if posts %}
-	{% include "blog/post_list.html" %}
-{% else %}
-	<p> Ops, something Wrong.... </p>  
-{% endif %}
-{% endblock %}
-
+{% block body %} {% include "blog/post_list.html" %} {% endblock %}
 {% block footer %} {% include "footer.html" %} {% endblock %}

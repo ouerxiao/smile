@@ -1,3 +1,4 @@
+
 {% extends 'base.html' %}
 
 {% block title %} {{ query }} results {% endblock %}
@@ -9,37 +10,40 @@
 {% block body %}
 
 <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="/">home</a></li>
-    <li class="breadcrumb-item active">
-            search：{{ query }}
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item active"> 
+            Search：{{ query }}
     </li>
 </ol>
-
-
   <div class="section">
     <div class="container">
         <div class="row">
-            <div class="col-md-3">
-
-            </div>  
-            <div class="col-md-9">
-                <div class="profile-details">
+	    {% if posts %}
+	        {% include "blog/post_list.html" %}
+	    {% else %}
+            <div class="col-md-3"> </div>
+	    <div class="col-md-9"> 
+               <div class="profile-details">
                     <div class="section-title">
-                        <h3 class="title">search result：</h3>
-                    </div>
+		        <h3 class="title">Hmmm, we didn't find anything for "{{ query }}"</h3>
+		        <a href="/"><p class="text-xs-center">Try a different search term </p><a>
+                        <br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+		    </div>
                 </div>
-{% if posts %}  
-{% include "blog/post_list.html" %}
-            </div>    
-        </div>
+            </div>
+            {% endif %}
+        </div>	
+	</div>
     </div>
 </div>
-{% else %}
-<a href="/"><p class="text-center">COMING  SOON!!! check out others~~</p></a>
-{% endif %}
-    
-
 
 {% endblock %}
-
 {% block footer %} {% include "footer.html" %} {% endblock %}   

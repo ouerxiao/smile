@@ -10,12 +10,11 @@
 {% block body %}
 
 <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="/">home</a></li>
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
     <li class="breadcrumb-item active">
         <a href="{% url 'contact' %}">
-            contact：</a></li>
+            Contact：</a></li>
 </ol>
-
 
 <div class="container">
     <div class="row">
@@ -23,7 +22,7 @@
                 <div class="billing-details">
                    
                     <div class="section-title">
-                        <h3 class="title">Contact Form</h3>
+                        <h3 class="title">  </h3>
                     {% if messages %}
                         {% for message in messages %}
                             <div class='alert alert-{{ message.tags }}' role='alert'>
@@ -46,7 +45,7 @@
         <div class="col-md-8">
             <div class="contact-infor">
                 <div class="section-title">
-                    <h4 class="title">contact：</h4>
+                    <h4 class="title"> </h4>
                 </div>
                 <div>
                     {{ setting.contact|safe }}
@@ -54,11 +53,8 @@
             </div>
         </div>
     </div>
-
 </div>
 
-
 {% endblock %}
-
 {% block footer %} {% include "footer.html" %} {% endblock %}
     

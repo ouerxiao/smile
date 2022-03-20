@@ -13,9 +13,7 @@ from django.utils.html import mark_safe
 from ckeditor_uploader.fields import RichTextUploadingField
 from embed_video.fields import EmbedVideoField
 
-
 # Create your models here.
-
 STATUS = (
     ('True', 'True'),
     ('False', 'False'),
@@ -49,7 +47,6 @@ class Category(MPTTModel):
     class Meta:
         unique_together = ('slug', 'parent')
         db_table = 'blog_category'
-
 
 
 STATUS_CHOICES = ( 
@@ -177,4 +174,3 @@ class Youtube(models.Model):
 
     class Meta:
         db_table = 'blog_youtube'
-        

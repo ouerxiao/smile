@@ -11,8 +11,8 @@
 {% block body %}
 
 <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="/">home</a></li>
-    <li class="breadcrumb-item "><a href="{% url 'image-detail' image.id %}">image detail：</a></li>
+    <li class="breadcrumb-item"><a href="/"> Home</a></li>
+    <li class="breadcrumb-item "><a href="{% url 'image-detail' image.id %}"> Image details：</a></li>
 </ol>
   
 <div class="row">
@@ -76,7 +76,7 @@
                     <div class="dropdown">
                         <button class="btn-lg btn-link" style="border:none" type="button" id="dropdownMenu1" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false"><i class="fas fa-share-alt text-muted float-right p-1 my-1" data-toggle="tooltip" data-placement="top"
-                        title="Share this post">share</i></button>
+                        title="Share this post"> Share</i></button>
                         <div class="dropdown-menu dropdown-primary" style="background-color:steelblue">
                             <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php?u={{request.build_absolute_uri}}">
                                 <i class="fab fa-facebook-f white-text mr-4"></i>facebook
@@ -93,7 +93,7 @@
                     </div>
                 </li>
                 <li class="list-group-item" >
-                    <button class="btn-lg btn-link" style="border:none"><a href="#comment-form"><i class="fab fa-rocketchat text-muted float-right p-1 my-1">留言</i></a></button>
+                    <button class="btn-lg btn-link" style="border:none"><a href="#comment-form"><i class="fab fa-rocketchat text-muted float-right p-1 my-1"> Comments</i></a></button>
                 </li>
 
 
@@ -102,11 +102,11 @@
                         {% csrf_token %}
                         {% if is_liked %}
                         <button class="btn-lg btn-link"  style="border:none" type="submit" name="image_id" value="{{ image.pk }}">    
-                            <i class="fas fa-heart text-muted float-right p-1 my-1">{{ image.total_likes}} like </i>
+                            <i class="fas fa-heart text-muted float-right p-1 my-1">{{ image.total_likes}} Likes </i>
                         </button>
                         {% else %}
                         <button class="btn-lg btn-link"  style="border:none" type="submit" name="image_id" value="{{ image.pk }}">    
-                            <i class="far fa-heart text-muted float-right p-1 my-1">{{ image.total_likes}} like </i>
+                            <i class="far fa-heart text-muted float-right p-1 my-1">{{ image.total_likes}} Likes </i>
                         </button>
                         {% endif %}
                     </form>
@@ -115,7 +115,7 @@
                 <li class="list-group-item">
                     <button class="btn-lg btn-link" style="border:none" type="button" id="dropdownMenu1" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false"><i class="fas fa-hand-point-right text-muted float-right p-1 my-1" data-toggle="tooltip" data-placement="top"
-                    title="I like it">related article</i></button>
+                    title="I like it"> Related articles</i></button>
 
                     <div class="dropdown-menu dropdown-primary" >
                         <a class="dropdown-item" href="#">
@@ -134,9 +134,9 @@
                 </li>
                 <li class="list-group-item">
                     <h1></h1>
-                    <p><a href="#" style="color: black;">top page</a></p>
-                    <p><a href="#" style="color: black;">comments </a></p>
-                    <p><a href="#" style="color: black;">i want to comment </a></p>
+                    <p><a href="#" style="color: black;"> Top page</a></p>
+                    <p><a href="#" style="color: black;"> Comments </a></p>
+                    <p><a href="#" style="color: black;"> I want to comment </a></p>
 
                 </li>
             </ul>
@@ -146,6 +146,4 @@
 
 {% endblock %}
 
-{% block footer %}
-{% include 'footer.html' %}
-{% endblock %}
+{% block footer %} {% include 'footer_white.html' %} {% endblock %}

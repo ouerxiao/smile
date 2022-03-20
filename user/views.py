@@ -34,7 +34,7 @@ def login_form(request):
             request.session['userimage'] = userprofile.avatar.url
             return HttpResponseRedirect('/')
         else:
-            messages.warning(request,'Login FAILED！Wrong username or password。')
+            messages.warning(request,'login failed, WRONG username or password')
             return HttpResponseRedirect('/login')
 
     category = Category.objects.all()
@@ -62,7 +62,7 @@ def signup_form(request):
             data.user_id = current_user.id
             data.avatar = 'avatar/default.jpg'
             data.save()
-            messages.success(request, 'SUCCESSFULLY created username！')
+            messages.success(request, 'Successfully CREATED username！')
 
             return HttpResponseRedirect('/')
         else:
@@ -86,7 +86,7 @@ def user_update(request):
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
             profile_form.save()
-            messages.success(request, 'UPDATED')
+            messages.success(request, 'Successfully updated！')
             return HttpResponseRedirect('/user')
     else:
         category = Category.objects.all()
@@ -106,10 +106,10 @@ def user_password(request):
         if form.is_valid():
             user = form.save()
             update_session_auth_hash(request, user)
-            messages.success(request, 'SUCCESSFULLY changed password！')
+            messages.success(request, 'Successfully changed!')
             return HttpResponseRedirect('/user')
         else:
-            messages.error(request, 'follow instruction to change：<br>'+ str(form.errors))
+            messages.error(request, 'follow instructions：<br>'+ str(form.errors))
             return HttpResponseRedirect('/user/password')
     else:
         category = Category.objects.all()
@@ -134,7 +134,7 @@ class PasswordResetConfirm(PasswordResetConfirmView):
     template_name = 'user/password_reset_confirm.html'
     form_class = SetPasswordForm
     success_url = reverse_lazy('home')
-    form_valid_message = ("successfully changed password!")
+    form_valid_message = ("Successfully changed!")
 
     def form_valid(self, form):
         form.save()
@@ -156,7 +156,7 @@ def user_comments(request):
 def user_deletecomments(request, id):
     current_user = request.user
     Comment.objects.filter(id=id, user_id=current_user.id).delete()
-    messages.success(request, 'Deleted！')
+    messages.success(request, 'Successfully deleted!')
     return HttpResponseRedirect('/user/comments')
 
 

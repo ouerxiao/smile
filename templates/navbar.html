@@ -1,6 +1,5 @@
 {% load mptt_tags %}
 {% load static %}
-
 <header>
     <nav class="navbar navbar-dark bg-dark fixed-top">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -29,22 +28,22 @@
                             <li class="dropdown-item"><a href="{% url 'user' %}">My account</a></li>
                             <li class="dropdown-item"><a href="{% url 'user_bookmarks' %}">My bookmark</a></li>
                             <li class="dropdown-item"><a href="{% url 'user_comments' %}">My comments</a></li>
-                            <li class="dropdown-item"><a href="{% url 'logout' %}">logout</a></li>
+                            <li class="dropdown-item"><a href="{% url 'logout' %}">log out</a></li>
                         </ul>
                     </li>
                 {% else %}
                     <li class="nav-item">
-                        <a class="nav-link " href="{% url 'login' %}">login</a> 
+                        <a class="nav-link " href="{% url 'login' %}">Login</a> 
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'signup' %}">sign up</a>
+                        <a class="nav-link" href="{% url 'signup' %}">Signup</a>
                     </li>
                 {% endif %}
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            blog
+                            Blog
                         </a>             
                         <ul style="list-style-type:none" class="dropdown-menu mt-2 rounded-0 white border-0 z-depth-1" >
                             {% recursetree category %}
@@ -62,16 +61,16 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link " href="{% url 'image' %}">image</a>
+                        <a class="nav-link " href="{% url 'image' %}">Image</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="{% url 'video' %}">video</a>
+                        <a class="nav-link " href="{% url 'video' %}">Video</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'about' %}">about</a>
+                        <a class="nav-link" href="{% url 'about' %}">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'contact' %}">contact</a>
+                        <a class="nav-link" href="{% url 'contact' %}">Contact</a>
                     </li>
                 </div>
             </ul>
@@ -94,7 +93,7 @@
                 <input name='query' id='query' class="form-control mr-sm-2" type="search" placeholder="search"
                     aria-label="Search">
                 <select name="catid" id='catid' class='input search-categories'>
-                    <option value="0">all</option>
+                    <option value="0">All</option>
                     {% for rs in category %}
                     <option value="{{rs.id}}">{{rs.name}}</option>
                     {% endfor %}

@@ -11,15 +11,10 @@ from blog.models import Post, Category, Comment, Youtube, PostImage
 from blog.forms import CommentForm
 from blog.models import Post, Category, PostImage
 
-
-
-# Create your views here
-
+# Create your views here.
 
 def post_detail(request, id, slug):
-    # So it's just a way to get the QuerySet from the Manager. This can be handy to ensure that you're dealing with a QuerySet and not a Manager, because MyModel.objects returns a Manager.Because you can't iterate over a Manager. However, all() returns the QuerySet, you can iterate over a QuerySet:
     category = Category.objects.all()
-    # category = Category.objects.get_queryset().order_by('id')
     post = Post.objects.get(pk=id)
     images = PostImage.objects.filter(post_id=id)
     comments = Comment.objects.filter(post_id=id, status=True)
@@ -62,14 +57,12 @@ def addcomment(request, id, parent_id=None):
             data.parent_id = parent_id
             data.save()
             messages.success(
-                request, 'Messages sent！')
+                request, 'messages sent！')
             return HttpResponseRedirect(url)
     return HttpResponseRedirect(url)
 
 def post_image(request):
-
     post_list = PostImage.objects.all()
-    #post_list = PostImage.objects.get_queryset().order_by('id')
     page = request.GET.get('page', 1)
     paginator = Paginator(post_list, 6)
 
@@ -90,7 +83,6 @@ def post_image(request):
 
 def post_image_detail(request, id):
     category = Category.objects.all()
-    #category = Category.objects.get_queryset().order_by('id')
     image = PostImage.objects.get(pk=id)
     is_liked = False
     if image.likes_image.filter(id=request.user.id).exists():
@@ -107,7 +99,7 @@ def post_image_detail(request, id):
 
 def post_video(request):
     videos_list = Youtube.objects.all()
-    # videos_list = Youtube.objects.get_queryset().order_by('id')
+
     page = request.GET.get('page', 1)
     paginator = Paginator(videos_list, 6)
 
