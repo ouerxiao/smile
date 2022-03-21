@@ -2,3 +2,8 @@
 first django web
 
 # deployed on http://34.234.19.93/
+
+
+
+# data Modeling (still working on...)
+![blog](https://user-images.githubusercontent.com/57294625/159336801-dfb95c89-01b9-4c8b-8c1b-e9df5e091590.png)
