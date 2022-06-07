@@ -1,7 +1,6 @@
 html,
 body {
     height: 100%;
-
 }
 
 body {
@@ -11,13 +10,15 @@ body {
 .collapse-content .fa.fa-heart:hover {
     color: #f44336 !important;
 }
+
 .collapse-content .fa.fa-share-alt:hover {
     color: #0d47a1 !important;
 }
 
 #breadcrumb {
-  padding-top: 1em;
+    padding-top: 1em;
 }
 
-
-
+a {
+    color:unset;
+}
