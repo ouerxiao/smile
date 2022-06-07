@@ -1,4 +1,4 @@
-<h1 align='center'>Dynamic Django Web Application </h1>
+<h1 align='center'>Dynamic Blog Web Application </h1>
 
 <p align='center'>
   <img src='https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white' height='20'>
