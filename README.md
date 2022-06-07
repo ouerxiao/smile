@@ -1,6 +1,7 @@
 <h1 align='center'>Dynamic Blog Web Application </h1>
 
 <p align='center'>
+  <img src='https://img.shields.io/badge/language-python-blue?style'>
   <img src='https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white' height='20'>
   <img src='https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white' height='20'>
   <img src='https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white' height='20'>
