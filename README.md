@@ -40,8 +40,8 @@
 
 <h2>Features</h2>
 <ul>
-  <li>:iphone: Responsive </li>
+  <li>:iphone: **Responsive** </li>
   <li>:gear: **Best Practices** </li>
-  <li>:star: **APIs** :  user profile, the posts, the images, and the comments </li>
+  <li>:computer: **APIs** :  User profile, the posts, the images, and the comments </li>
   <li> :rocket: :rocket: :rocket: </li>
 </ul>
