@@ -33,20 +33,15 @@
 
 <h2>Preview</h2>
 <p align='center'>
-  <a> Home-page</a>
-  <img src=./gif/01.gif'>
-  <img src=./gif/03.gif'>
-
-  <a>Post-page</a>
+  <img src='./gif/01.gif'>
   <img src='./gif/02.gif'>
-
-  <a>User-page</a>
   <img src='./gif/04.gif'>
 </p>
 
 <h2>Features</h2>
-- :iphone: Responsive
-- :gear: **Best Practices**
-- :star: **APIs** :  user profile, the posts, the images, and the comments
-- :rocket: :rocket: :rocket:
-
+<ul>
+  <li>:iphone: Responsive </li>
+  <li>:gear: **Best Practices** </li>
+  <li>:star: **APIs** :  user profile, the posts, the images, and the comments </li>
+  <li> :rocket: :rocket: :rocket: </li>
+</ul>
